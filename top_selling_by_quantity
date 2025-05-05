@@ -1,0 +1,6 @@
+SELECT p.product_id, p.description, SUM(ii.quantity) AS total_sold
+FROM invoice_items ii
+JOIN products p ON ii.product_id = p.product_id
+GROUP BY p.description
+ORDER BY total_sold DESC
+LIMIT 10;
