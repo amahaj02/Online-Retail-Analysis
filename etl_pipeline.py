@@ -7,7 +7,8 @@ import os
 load_dotenv()  # load from .env
 
 # --- CONFIG ---
-CSV_PATH = "data/online_retail.csv"
+CSV_PATH = "data/raw/online_retail.csv"
+WRITE_PATH = "data/processed/cleaned_data.csv"
 DB_NAME = os.getenv("DB_NAME")
 DB_USER = os.getenv("DB_USER")
 DB_PASSWORD = os.getenv("DB_PASSWORD")
@@ -24,10 +25,11 @@ print("🧹 Cleaning data...")
 df.dropna(subset=['CustomerID', 'Description'], inplace=True)
 df = df[(df['Quantity'] > 0) & (df['UnitPrice'] > 0)]
 df['InvoiceDate'] = pd.to_datetime(df['InvoiceDate'])
-
+df.to_csv(WRITE_PATH)
 # --- 3. Split Tables ---
 print("🔀 Creating tables...")
 
+df =  pd.read_csv(WRITE_PATH, encoding='ISO-8859-1')
 customers = df[['CustomerID', 'Country']].drop_duplicates().astype({'CustomerID': 'int'})
 
 products = df[['StockCode', 'Description', 'UnitPrice']].drop_duplicates()
