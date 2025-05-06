@@ -3,11 +3,35 @@ import psycopg2
 from psycopg2.extras import execute_values
 from dotenv import load_dotenv
 import os
+from huggingface_hub import hf_hub_download
+from pathlib import Path
 
 load_dotenv()  # load from .env
 
-# --- CONFIG ---
-CSV_PATH = "data/raw/online_retail.csv"
+RAW_DIR = Path("data/raw")
+RAW_DIR.mkdir(parents=True, exist_ok=True)
+# Move or copy to desired final path (data/raw/online_retail.csv)
+final_csv_path = RAW_DIR / "online_retail.csv"
+
+
+if not final_csv_path.exists():
+    print("⬇️ Raw dataset not found. Downloading from Hugging Face...")
+    
+    csv_path = hf_hub_download(
+        repo_id="aarav912/online-retail",  # your dataset repo
+        filename="online_retail.csv",
+        repo_type="dataset",
+        cache_dir=RAW_DIR
+    )
+
+    Path(csv_path).rename(final_csv_path)
+
+    print("✅ Downloaded raw CSV from Hugging Face.")
+else:
+    print("📁 Raw dataset already exists. Skipping download.")
+
+Path(final_csv_path).rename(final_csv_path)  # move from cache to project location
+
 WRITE_PATH = "data/processed/cleaned_data.csv"
 DB_NAME = os.getenv("DB_NAME")
 DB_USER = os.getenv("DB_USER")
@@ -18,7 +42,7 @@ DB_PORT = os.getenv("DB_PORT")
 
 # --- 1. Load Data ---
 print("📥 Loading CSV...")
-df = pd.read_csv(CSV_PATH, encoding='ISO-8859-1')
+df = pd.read_csv(final_csv_path, encoding='ISO-8859-1')
 
 # --- 2. Clean Data ---
 print("🧹 Cleaning data...")
