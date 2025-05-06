@@ -9,5 +9,3 @@ JOIN products p ON ii.product_id = p.product_id
 GROUP BY ii.customer_id
 ORDER BY total_spent DESC
 LIMIT 10;
-
-COPY top_spending_customers TO 'C:/Aarav/CODING/Online-Retail-Analysis/exports/top_spending_customers.csv' WITH CSV HEADER;

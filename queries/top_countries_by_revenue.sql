@@ -11,5 +11,3 @@ WHERE c.country != 'United Kingdom'
 GROUP BY c.country
 ORDER BY revenue DESC
 LIMIT 10;
-
-COPY top_countries_by_revenue TO 'C:/Aarav/CODING/Online-Retail-Analysis/exports/top_countries_by_revenue.csv' WITH CSV HEADER;

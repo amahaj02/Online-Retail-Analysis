@@ -10,5 +10,3 @@ JOIN invoices i ON ii.invoice_id = i.invoice_id
 JOIN products p ON ii.product_id = p.product_id
 GROUP BY month
 ORDER BY month;
-
-COPY monthly_revenue_trend TO 'C:/Aarav/CODING/Online-Retail-Analysis/exports/month_revenue_trend.csv' WITH CSV HEADER;
