@@ -24,7 +24,7 @@ if not final_csv_path.exists():
         cache_dir=RAW_DIR
     )
 
-    Path(csv_path).rename(final_csv_path)
+    final_csv_path = csv_path
 
     print("✅ Downloaded raw CSV from Hugging Face.")
 else:
@@ -32,6 +32,7 @@ else:
 
 Path(final_csv_path).rename(final_csv_path)  # move from cache to project location
 
+os.makedirs("data/processed", exist_ok=True)
 WRITE_PATH = "data/processed/cleaned_data.csv"
 DB_NAME = os.getenv("DB_NAME")
 DB_USER = os.getenv("DB_USER")
