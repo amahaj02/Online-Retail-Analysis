@@ -30,7 +30,6 @@ if not final_csv_path.exists():
 else:
     print("📁 Raw dataset already exists. Skipping download.")
 
-Path(final_csv_path).rename(final_csv_path)  # move from cache to project location
 
 os.makedirs("data/processed", exist_ok=True)
 WRITE_PATH = "data/processed/cleaned_data.csv"
@@ -43,6 +42,8 @@ DB_PORT = os.getenv("DB_PORT")
 
 # --- 1. Load Data ---
 print("📥 Loading CSV...")
+print("Downloaded to:", os.path.abspath('online_retail.csv'))
+print(final_csv_path)
 df = pd.read_csv(final_csv_path, encoding='ISO-8859-1')
 
 # --- 2. Clean Data ---

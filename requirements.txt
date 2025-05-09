@@ -1,21 +1,23 @@
 certifi==2025.4.26
 charset-normalizer==3.4.2
-colorama==0.4.6
+dotenv==0.9.9
 filelock==3.18.0
 fsspec==2025.3.2
-huggingface-hub==0.30.2
+hf-xet==1.1.0
+huggingface-hub==0.31.1
 idna==3.10
-numpy @ file:///D:/bld/numpy_1745118932824/work/dist/numpy-2.2.5-cp313-cp313-win_amd64.whl#sha256=70b26fb49b3709b258c01f416229ce76fcfc2d669138e1e1cf7145e874630cf6
+numpy==2.2.5
 packaging==25.0
-pandas @ file:///D:/bld/pandas_1744430475950/work
-psycopg2 @ file:///D:/bld/psycopg2-split_1727892618040/work
-python-dateutil @ file:///home/conda/feedstock_root/build_artifacts/python-dateutil_1733215673016/work
+pandas==2.2.3
+pathlib==1.0.1
+psycopg2-binary==2.9.10
+python-dateutil==2.9.0.post0
 python-dotenv==1.1.0
-pytz @ file:///home/conda/feedstock_root/build_artifacts/pytz_1742920838005/work
+pytz==2025.2
 PyYAML==6.0.2
 requests==2.32.3
-six @ file:///home/conda/feedstock_root/build_artifacts/six_1733380938961/work
+six==1.17.0
 tqdm==4.67.1
 typing_extensions==4.13.2
-tzdata @ file:///home/conda/feedstock_root/build_artifacts/python-tzdata_1742745135198/work
+tzdata==2025.2
 urllib3==2.4.0

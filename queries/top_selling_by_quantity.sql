@@ -9,3 +9,5 @@ JOIN products p ON ii.product_id = p.product_id
 GROUP BY p.product_id
 ORDER BY total_sold DESC
 LIMIT 10;
+
+\COPY top_selling_by_quantity TO '/Users/siraajsinghmonga/Online-Retail-Analysis/exports/top_selling_by_quantity.csv' WITH CSV HEADER;
