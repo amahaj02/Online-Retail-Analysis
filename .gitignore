@@ -1,3 +1,6 @@
 .env
 data/*
 online-retail-dataset-hf/*
+project.session.sql
+venv/*
+server/.env
