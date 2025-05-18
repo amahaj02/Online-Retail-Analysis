@@ -18,10 +18,11 @@ if not final_csv_path.exists():
     print("⬇️ Raw dataset not found. Downloading from Hugging Face...")
     
     csv_path = hf_hub_download(
-        repo_id="aarav912/online-retail",  # your dataset repo
+        repo_id="aarav912/online-retail",  
         filename="online_retail.csv",
         repo_type="dataset",
-        cache_dir=RAW_DIR
+        cache_dir=RAW_DIR,
+        local_dir=RAW_DIR
     )
 
     final_csv_path = csv_path
