@@ -19,6 +19,8 @@ async def query_handler(request: Request):
     data = await request.json()
     prompt = data.get("query", "")
 
+    print("📝 Received query:", prompt)
+
     if not prompt:
         return {"error": "Empty query"}
 
