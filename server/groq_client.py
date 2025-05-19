@@ -9,6 +9,7 @@ client = Groq(api_key=os.getenv("GROQ_API_KEY"))
 def get_sql_from_prompt(user_prompt: str) -> str:
     prompt = f"""
 You are a helpful assistant that converts natural language questions into SQL queries.
+limit results to 20 rows,unless the user specifies otherwise.
 The database contains the following tables:
 
 customers(customer_id, country)
