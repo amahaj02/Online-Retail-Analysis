@@ -102,8 +102,11 @@ input {
   font-size: 1.25rem;
 }
 
-.logo-icon {
-  font-size: 1.5rem;
+.logo-image {
+  height: 30px;
+  width: auto;
+  display: block;
+  
 }
 
 .logo-text {
@@ -112,8 +115,10 @@ input {
   background-clip: text;
   color: transparent;
   font-weight: 800;
+  display: inline-block;
+  vertical-align: middle;
+  line-height: 30px; /* Match the height of the logo */
 }
-
 .nav {
   display: none;
 }

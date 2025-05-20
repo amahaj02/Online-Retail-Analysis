@@ -2,6 +2,7 @@
 
 import { useState } from "react"
 import "../styles/style.css"
+import logo from "../assets/logo.jpg"
 
 export default function Results({ data, setData }) {
   const [activeTab, setActiveTab] = useState("table")
@@ -32,9 +33,14 @@ export default function Results({ data, setData }) {
       <header className="header">
         <div className="header-container">
           <h1 className="logo">
-            <span className="logo-icon">🛍️</span>
-            <span className="logo-text">Retail Explorer</span>
+            <span className="logo-icon" style={{ display: "flex", alignItems: "center" }}>
+              <img src={logo} alt="Logo" style={{ height: "24px", verticalAlign: "middle" }} />
+              <span style={{ fontSize: "24px", fontWeight: "bold", background: "linear-gradient(to right, #7f00ff, #00bfff)", WebkitBackgroundClip: "text", WebkitTextFillColor: "transparent" }}>
+                Retex
+              </span>
+            </span>
           </h1>
+
           <button className="menu-button">
             <svg
               xmlns="http://www.w3.org/2000/svg"
