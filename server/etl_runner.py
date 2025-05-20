@@ -4,7 +4,7 @@ from pathlib import Path
 from huggingface_hub import hf_hub_download
 from db import insert_dataframe
 
-RAW_DIR = Path("data/raw")
+RAW_DIR = Path("../data/raw")
 RAW_DIR.mkdir(parents=True, exist_ok=True)
 final_csv_path = RAW_DIR / "online_retail.csv"
 
@@ -21,8 +21,8 @@ if not final_csv_path.exists():
 else:
     print("📁 Raw dataset already exists.")
 
-WRITE_PATH = "data/processed/cleaned_data.csv"
-os.makedirs("data/processed", exist_ok=True)
+WRITE_PATH = "../data/processed/cleaned_data.csv"
+os.makedirs("../data/processed", exist_ok=True)
 
 print("📥 Loading CSV...")
 df = pd.read_csv(final_csv_path, encoding='ISO-8859-1')
