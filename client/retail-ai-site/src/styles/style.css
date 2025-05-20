@@ -26,6 +26,7 @@
   margin: 0;
   padding: 0;
   box-sizing: border-box;
+  scroll-behavior: smooth;
 }
 
 body {
@@ -690,4 +691,12 @@ input {
   .sql-query {
     flex: 1;
   }
+}
+
+.social-links .social-link {
+  margin-right: 20px;
+}
+
+.social-links .social-link:last-child {
+  margin-right: 0;
 }
