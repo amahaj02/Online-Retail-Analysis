@@ -36,6 +36,7 @@ DB_USER = os.getenv("DB_USER")
 DB_PASSWORD = os.getenv("DB_PASSWORD")
 DB_HOST = os.getenv("DB_HOST")
 DB_PORT = os.getenv("DB_PORT")
+DB_SSLMODE = os.getenv("DB_SSLMODE")
 
 # --- 1. Load Data ---
 print("📥 Loading CSV...")
@@ -81,8 +82,8 @@ conn = psycopg2.connect(
     user=DB_USER,
     password=DB_PASSWORD,
     host=DB_HOST,
-    port=DB_PORT
-)
+    port=DB_PORT,
+    sslmode=DB_SSLMODE)
 cur = conn.cursor()
 
 url: str = os.getenv("SUPABASE_URL")
