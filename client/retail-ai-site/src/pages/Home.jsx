@@ -4,6 +4,7 @@ import "../styles/style.css"
 import Results from "./Results";
 import { Notyf } from 'notyf';
 import 'notyf/notyf.min.css';
+import logo from "../assets/logo.jpg"
 
 const notyf = new Notyf(
   {
@@ -48,8 +49,12 @@ export default function Home() {
       <header className="header">
         <div className="header-container">
           <h1 className="logo">
-            <span className="logo-icon"></span>
-            <span className="logo-text">Retail Explorer</span>
+            <span className="logo-icon" style={{ display: "flex", alignItems: "center" }}>
+              <img src={logo} alt="Logo" style={{ height: "24px", verticalAlign: "middle" }} />
+              <span style={{ fontSize: "24px", fontWeight: "bold", background: "linear-gradient(to right, #7f00ff, #00bfff)", WebkitBackgroundClip: "text", WebkitTextFillColor: "transparent" }}>
+                Retex
+              </span>
+            </span>
           </h1>
           <nav className="nav">
               <ul className="nav-list">
@@ -140,7 +145,14 @@ export default function Home() {
                 className="github-link"
                 target="_blank"
                 rel="noopener noreferrer"
-              >Click here</a> for the dataset, hosted on HuggingFace.
+              >Click here</a> for the dataset, hosted on HuggingFace. Credit for the 
+              {" "}
+              <a 
+                href="https://archive.ics.uci.edu/dataset/352/online+retail"
+                className="github-link"
+                target="_blank"
+                rel="noopener noreferrer"
+                > original dataset</a> on UCI Machine Learning Repository goes to Daqing Chen.
           <br></br>
           Below are the main tables used in this analysis:
         </p>
@@ -215,13 +227,17 @@ export default function Home() {
         <div className="section-content">
           <div className="about-card">
             <p className="about-text">
-              <em>Retail Explorer</em> is an interactive web app that lets users explore a real-world retail transactions dataset using natural language. Instead of writing SQL queries manually, users can ask questions in plain English — like <em>"Which products sold the most in July?"</em> — and get answers instantly.
+              <em>Retail Explorer</em> is an interactive web app that lets users explore a real-world retail transactions dataset using natural language. Instead of writing SQL queries manually, users can ask questions in plain English, like <em>"Which products sold the most in July?"</em>, and get answers instantly.
             </p>
             <p className="about-text">
               In the backend, the app uses Groq API to convert natural language into SQL, which is then executed on a PostgreSQL database. The backend is powered by FastAPI, and the frontend is built with React, Tailwind CSS, and ShadCN UI, ensuring fast performance and a responsive interface.
             </p>
             <p className="about-text">
-              The goal of this project is to make relational data exploration easier and more intuitive — blending the abilities of SQL with the flexibility of AI.
+              The goal of this project is to make relational data exploration easier and more intuitive; blending the abilities of SQL with the flexibility of AI.
+            </p>
+            <p className="citation">
+              Dataset citation:<br></br>
+              Chen, D. (2015). Online Retail [Dataset]. UCI Machine Learning Repository. <a href="https://doi.org/10.24432/C5BW33" className="github-link" target="_blank" rel="noopener noreferrer">https://doi.org/10.24432/C5BW33</a>
             </p>
           </div>
         </div>
