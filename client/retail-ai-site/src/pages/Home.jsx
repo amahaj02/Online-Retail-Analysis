@@ -20,7 +20,7 @@ export default function Home() {
   const [data, setData] = useState("");
 
   function handleSubmit(){
-    fetch("http://localhost:8000/query", {
+    fetch(`${import.meta.env.VITE_BACKEND_URL}`, {
       method: "POST",
       headers: { "Content-Type": "application/json" },
       body: JSON.stringify({query})
