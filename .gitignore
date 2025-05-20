@@ -4,5 +4,6 @@ online-retail-dataset-hf/*
 project.session.sql
 venv/*
 server/.env
+server/__pychache__/*
 # Local Netlify folder
 .netlify
