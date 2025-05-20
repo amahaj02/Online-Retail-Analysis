@@ -1,0 +1,21 @@
+{
+    "sqltools.connections": [
+        {
+            "pgOptions": {
+                "ssl": {
+                    "rejectUnauthorized": true,
+                    "requestCert": true
+                }
+            },
+            "previewLimit": 50,
+            "server": "aws-0-us-west-1.pooler.supabase.com",
+            "port": 5432,
+            "askForPassword": true,
+            "driver": "PostgreSQL",
+            "name": "RetailDB",
+            "group": "Supabase",
+            "database": "postgres",
+            "username": "postgres.wepnoylntmqsxfggbqsi"
+        }
+    ]
+}
